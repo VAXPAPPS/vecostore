@@ -21,6 +21,20 @@ class UpdateInfo {
       );
 }
 
+class BundledItem {
+  final String name;
+  final String updateJsonUrl;
+
+  BundledItem({required this.name, required this.updateJsonUrl});
+
+  factory BundledItem.fromJson(Map<String, dynamic> json) {
+    return BundledItem(
+      name: json['name'] as String? ?? '',
+      updateJsonUrl: json['update_json'] as String? ?? '',
+    );
+  }
+}
+
 class StoreItem {
   final String name;
   final String package;
@@ -32,8 +46,8 @@ class StoreItem {
   final String author;
   final String updateJsonUrl;
   final StoreItemType type;
-  final List<String> bundledPlugins;
-  final List<String> bundledWidgets;
+  final List<BundledItem> bundledPlugins;
+  final List<BundledItem> bundledWidgets;
 
   UpdateInfo? updateInfo;
 
@@ -70,11 +84,11 @@ class StoreItem {
       updateJsonUrl: json['update_json'] as String? ?? '',
       type: type,
       bundledPlugins: (json['bundled_plugins'] as List<dynamic>?)
-              ?.map((e) => e.toString())
+              ?.map((e) => BundledItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
       bundledWidgets: (json['bundled_widgets'] as List<dynamic>?)
-              ?.map((e) => e.toString())
+              ?.map((e) => BundledItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
     );

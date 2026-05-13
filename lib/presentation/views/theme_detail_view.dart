@@ -233,7 +233,7 @@ class _BundleSection extends StatelessWidget {
                   label: 'Plugins',
                   icon: Icons.extension_rounded,
                   color: const Color(0xFFB39DFF),
-                  names: item.bundledPlugins,
+                  items: item.bundledPlugins,
                   type: StoreItemType.plugin,
                 ),
               ],
@@ -244,7 +244,7 @@ class _BundleSection extends StatelessWidget {
                   label: 'Widgets',
                   icon: Icons.widgets_rounded,
                   color: const Color(0xFF80CBC4),
-                  names: item.bundledWidgets,
+                  items: item.bundledWidgets,
                   type: StoreItemType.widget_,
                 ),
               ],
@@ -260,14 +260,14 @@ class _BundleGroup extends StatelessWidget {
   final String label;
   final IconData icon;
   final Color color;
-  final List<String> names;
+  final List<BundledItem> items;
   final StoreItemType type;
 
   const _BundleGroup({
     required this.label,
     required this.icon,
     required this.color,
-    required this.names,
+    required this.items,
     required this.type,
   });
 
@@ -291,8 +291,8 @@ class _BundleGroup extends StatelessWidget {
         Wrap(
           spacing: 8,
           runSpacing: 8,
-          children: names
-              .map((n) => _BundleChip(name: n, color: color, type: type))
+          children: items
+              .map((n) => _BundleChip(name: n.name, color: color, type: type))
               .toList(),
         ),
       ],

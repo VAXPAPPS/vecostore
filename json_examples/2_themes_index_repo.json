@@ -13,12 +13,24 @@
     "author": "VAXP Team",
     "update_json": "https://raw.githubusercontent.com/vaxpos/vaxp-themes/main/aurora-dark/update.json",
     "bundled_plugins": [
-      "blur-effects",
-      "dynamic-panel"
+      {
+        "name": "blur-effects",
+        "update_json": "https://raw.githubusercontent.com/VAXPAPPS/vaxp-plugins/main/blur-effects/update.json"
+      },
+      {
+        "name": "dynamic-panel",
+        "update_json": "https://raw.githubusercontent.com/VAXPAPPS/vaxp-plugins/main/dynamic-panel/update.json"
+      }
     ],
     "bundled_widgets": [
-      "aurora-clock",
-      "weather-widget"
+      {
+        "name": "aurora-clock",
+        "update_json": "https://raw.githubusercontent.com/VAXPAPPS/vaxp-widget/main/aurora-clock/update.json"
+      },
+      {
+        "name": "weather-widget",
+        "update_json": "https://raw.githubusercontent.com/VAXPAPPS/vaxp-widget/main/weather-widget/update.json"
+      }
     ]
   }
 ]
