@@ -1,0 +1,6 @@
+{
+  "version": "2.1.0",
+  "url": "https://raw.githubusercontent.com/VAXPAPPS/vaxp-plugins/main/blur-effects/blur-effects-2.1.0.tar.gz",
+  "changelog": "• تقليل استهلاك الذاكرة العشوائية\n• تحسين أداء الفلاتر البصرية بنسبة 30%\n• إضافة خيار للتحكم بنسبة الـ Gaussian Blur",
+  "install_path": "~/.config/aether/plugins/blur-effects"
+}

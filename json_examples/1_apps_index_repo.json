@@ -1,0 +1,29 @@
+[
+  {
+    "name": "calculator",
+    "package": "calculator",
+    "display_name": "حاسبة VAXP",
+    "description": "حاسبة علمية متطورة بتصميم VAXP الزجاجي.",
+    "icon_url": "https://raw.githubusercontent.com/VAXPAPPS/Calculator/main/assets/icon.png",
+    "screenshots": [
+      "https://raw.githubusercontent.com/VAXPAPPS/Calculator/main/assets/screenshot1.png",
+      "https://raw.githubusercontent.com/VAXPAPPS/Calculator/main/assets/screenshot2.png"
+    ],
+    "category": "أدوات",
+    "author": "VAXP Team",
+    "update_json": "https://raw.githubusercontent.com/VAXPAPPS/Calculator/main/update.json"
+  },
+  {
+    "name": "vaxmanegr",
+    "package": "vaxmanegr",
+    "display_name": "VAX Manager",
+    "description": "أداة قوية لإدارة ملفات ونظام VAXP بكفاءة عالية.",
+    "icon_url": "https://raw.githubusercontent.com/VAXPAPPS/vaxmanegr/main/assets/icon.png",
+    "screenshots": [
+      "https://raw.githubusercontent.com/VAXPAPPS/vaxmanegr/main/assets/screen1.png"
+    ],
+    "category": "نظام",
+    "author": "VAXP Team",
+    "update_json": "https://raw.githubusercontent.com/VAXPAPPS/vaxmanegr/main/update.json"
+  }
+]

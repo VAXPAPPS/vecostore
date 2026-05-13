@@ -1,0 +1,38 @@
+
+   [
+     {
+       "name": "calculator",
+       "package": "calculator",
+       "update_json": "https://raw.githubusercontent.com/vaxp/Calculator/main/update.json"
+     },
+     {
+       "name": "vaxmanegr",
+       "package": "vaxmanegr",
+       "update_json": "https://raw.githubusercontent.com/vaxp/vaxmanegr/main/update.json"
+     },
+     {
+       "name": "vanote",
+       "package": "vanote",
+       "update_json": "https://raw.githubusercontent.com/vaxp/vanote/main/update.json"
+     }
+     ,{
+       "name": "vaxpsam",
+       "package": "vaxpsam",
+       "update_json": "https://raw.githubusercontent.com/vaxp/vaxpsam/main/update.json"
+     }
+    ,{
+       "name": "vaxp-updater",
+       "package": "vaxp-updater",
+       "update_json": "https://raw.githubusercontent.com/vaxp/vaxp_updater/main/update.json"
+     }
+    ,{
+       "name": "vaclocks",
+       "package": "vaclocks",
+       "update_json": "https://raw.githubusercontent.com/vaxp/vaclocks/main/update.json"
+     }
+    ,{
+       "name": "vater",
+       "package": "vater",
+       "update_json": "https://raw.githubusercontent.com/vaxp/vater/main/update.json"
+     }
+   ]

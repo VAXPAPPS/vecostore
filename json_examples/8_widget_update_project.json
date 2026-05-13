@@ -1,0 +1,6 @@
+{
+  "version": "1.0.2",
+  "url": "https://raw.githubusercontent.com/VAXPAPPS/vaxp-widget/main/aurora-clock/aurora-clock-1.0.2.tar.gz",
+  "changelog": "• إصلاح مشكلة تزامن الوقت بعد إيقاف التشغيل\n• تحسين جودة الخطوط على الشاشات الكبيرة",
+  "install_path": "~/.config/aether/widgets/aurora-clock"
+}

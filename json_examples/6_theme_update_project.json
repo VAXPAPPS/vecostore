@@ -1,0 +1,6 @@
+{
+  "version": "1.0.5",
+  "url": "https://raw.githubusercontent.com/vaxpos/vaxp-themes/main/aurora-dark/aurora-dark-1.0.5.tar.gz",
+  "changelog": "• تحديث ألوان القوائم المنسدلة\n• زيادة شفافية الـ Panel\n• دعم كامل للتطبيقات الجديدة",
+  "install_path": "~/.config/aether/themes/aurora-dark"
+}

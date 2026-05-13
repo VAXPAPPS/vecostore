@@ -1,0 +1,24 @@
+[
+  {
+    "name": "aurora-dark",
+    "package": "aurora-dark",
+    "display_name": "Aurora Dark Theme",
+    "description": "ثيم داكن أنيق مستوحى من ألوان الشفق القطبي مع تأثيرات زجاجية متقدمة.",
+    "icon_url": "https://raw.githubusercontent.com/vaxpos/vaxp-themes/main/aurora-dark/preview.png",
+    "screenshots": [
+      "https://raw.githubusercontent.com/vaxpos/vaxp-themes/main/aurora-dark/screen1.png",
+      "https://raw.githubusercontent.com/vaxpos/vaxp-themes/main/aurora-dark/screen2.png"
+    ],
+    "category": "ثيمات داكنة",
+    "author": "VAXP Team",
+    "update_json": "https://raw.githubusercontent.com/vaxpos/vaxp-themes/main/aurora-dark/update.json",
+    "bundled_plugins": [
+      "blur-effects",
+      "dynamic-panel"
+    ],
+    "bundled_widgets": [
+      "aurora-clock",
+      "weather-widget"
+    ]
+  }
+]
