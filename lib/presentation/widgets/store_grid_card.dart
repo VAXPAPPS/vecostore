@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../domain/models/store_item.dart';
 import '../../domain/models/install_state.dart';
+import 'package:vecostore/core/colors/vaxp_colors.dart';
 
 /// بطاقة عنصر في الـ Grid
 class StoreGridCard extends StatefulWidget {
@@ -48,13 +49,13 @@ class _StoreGridCardState extends State<StoreGridCard> {
                 duration: const Duration(milliseconds: 200),
                 decoration: BoxDecoration(
                   color: _hovered
-                      ? Colors.white.withValues(alpha: 0.12)
-                      : Colors.white.withValues(alpha: 0.07),
+                      ? VaxpColors.defaultText.withValues(alpha: 0.12)
+                      : VaxpColors.defaultText.withValues(alpha: 0.07),
                   borderRadius: BorderRadius.circular(18),
                   border: Border.all(
                     color: _hovered
-                        ? Colors.white.withValues(alpha: 0.25)
-                        : Colors.white.withValues(alpha: 0.1),
+                        ? VaxpColors.defaultText.withValues(alpha: 0.25)
+                        : VaxpColors.defaultText.withValues(alpha: 0.1),
                   ),
                   boxShadow: _hovered
                       ? [
@@ -74,7 +75,7 @@ class _StoreGridCardState extends State<StoreGridCard> {
                     children: [
                       // ── Icon ──────────────────────────────
                       _ItemIcon(iconUrl: widget.item.iconUrl),
-                      const SizedBox(height: 12),
+                      SizedBox(height: 12),
 
                       // ── Name ──────────────────────────────
                       Text(
@@ -82,13 +83,13 @@ class _StoreGridCardState extends State<StoreGridCard> {
                         textAlign: TextAlign.center,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                          color: VaxpColors.defaultText,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4),
 
                       // ── Description ───────────────────────
                       Text(
@@ -100,11 +101,11 @@ class _StoreGridCardState extends State<StoreGridCard> {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 11,
-                          color: Colors.white.withValues(alpha: 0.55),
+                          color: VaxpColors.defaultText.withValues(alpha: 0.55),
                           height: 1.4,
                         ),
                       ),
-                      const SizedBox(height: 12),
+                      SizedBox(height: 12),
 
                       // ── Version badge ─────────────────────
                       if (widget.item.updateInfo != null)
@@ -114,7 +115,7 @@ class _StoreGridCardState extends State<StoreGridCard> {
                             'v${widget.item.updateInfo!.version}',
                             style: TextStyle(
                               fontSize: 10,
-                              color: Colors.white.withValues(alpha: 0.35),
+                              color: VaxpColors.defaultText.withValues(alpha: 0.35),
                             ),
                           ),
                         ),
@@ -149,13 +150,13 @@ class _ItemIcon extends StatelessWidget {
         width: 60,
         height: 60,
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.08),
+          color: VaxpColors.defaultText.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(14),
         ),
         child: Icon(
           Icons.apps_rounded,
           size: 30,
-          color: Colors.white.withValues(alpha: 0.4),
+          color: VaxpColors.defaultText.withValues(alpha: 0.4),
         ),
       );
     }
@@ -169,14 +170,14 @@ class _ItemIcon extends StatelessWidget {
         placeholder: (_, __) => Container(
           width: 60,
           height: 60,
-          color: Colors.white.withValues(alpha: 0.08),
-          child: const Center(
+          color: VaxpColors.defaultText.withValues(alpha: 0.08),
+          child: Center(
             child: SizedBox(
               width: 20,
               height: 20,
               child: CircularProgressIndicator(
                 strokeWidth: 1.5,
-                color: Colors.white54,
+                color: VaxpColors.defaultText.withValues(alpha: 0.54),
               ),
             ),
           ),
@@ -185,12 +186,12 @@ class _ItemIcon extends StatelessWidget {
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.08),
+            color: VaxpColors.defaultText.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(14),
           ),
           child: Icon(
             Icons.broken_image_outlined,
-            color: Colors.white.withValues(alpha: 0.3),
+            color: VaxpColors.defaultText.withValues(alpha: 0.3),
           ),
         ),
       ),
@@ -220,7 +221,7 @@ class _CardInstallButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(2),
           child: LinearProgressIndicator(
             value: state.progress,
-            backgroundColor: Colors.white.withValues(alpha: 0.1),
+            backgroundColor: VaxpColors.defaultText.withValues(alpha: 0.1),
             color: const Color(0xFF7AB3FF),
           ),
         ),
@@ -233,7 +234,7 @@ class _CardInstallButton extends StatelessWidget {
         width: double.infinity,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.06),
+            color: VaxpColors.defaultText.withValues(alpha: 0.06),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
@@ -242,7 +243,7 @@ class _CardInstallButton extends StatelessWidget {
               height: 14,
               child: CircularProgressIndicator(
                 strokeWidth: 1.5,
-                color: Colors.white.withValues(alpha: 0.3),
+                color: VaxpColors.defaultText.withValues(alpha: 0.3),
               ),
             ),
           ),
@@ -253,7 +254,7 @@ class _CardInstallButton extends StatelessWidget {
     final (label, color, icon) = switch (state.status) {
       InstallStatus.installed => (
         'Installed ✓',
-        Colors.white.withValues(alpha: 0.15),
+        VaxpColors.defaultText.withValues(alpha: 0.15),
         Icons.check_circle_outline,
       ),
       InstallStatus.updateAvailable => (
@@ -285,7 +286,7 @@ class _CardInstallButton extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(icon, size: 12, color: color),
-              const SizedBox(width: 4),
+              SizedBox(width: 4),
               Text(
                 label,
                 style: TextStyle(

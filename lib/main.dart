@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vecostore/core/colors/vaxp_colors.dart';
+import 'package:vecostore/core/text/vaxp_text_theme.dart';
 import 'package:vecostore/core/theme/vaxp_theme.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:venom_config/venom_config.dart';
@@ -34,11 +35,21 @@ class VaxpStoreApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Vaxp Ecosystem Store',
-      theme: VaxpTheme.dark,
-      home: const StoreShell(),
+    return ValueListenableBuilder<Color>(
+      valueListenable: VaxpColors.textNotifier,
+      builder: (context, textColor, _) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Vaxp Ecosystem Store',
+          theme: VaxpTheme.dark.copyWith(
+            textTheme: VaxpTextTheme.darkText.apply(
+              bodyColor: textColor,
+              displayColor: textColor,
+            ),
+          ),
+          home: const StoreShell(),
+        );
+      },
     );
   }
 }

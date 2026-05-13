@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../domain/models/install_state.dart';
 import '../../domain/models/store_item.dart';
+import 'package:vecostore/core/colors/vaxp_colors.dart';
 
 // ─── Page route helper ────────────────────────────────────
 PageRoute slideRoute(Widget page) => PageRouteBuilder(
@@ -74,9 +75,9 @@ class _SkeletonCardState extends State<SkeletonCard>
       animation: _anim,
       builder: (_, __) => Container(
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: _anim.value),
+          color: VaxpColors.defaultText.withValues(alpha: _anim.value),
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
+          border: Border.all(color: VaxpColors.defaultText.withValues(alpha: 0.07)),
         ),
       ),
     );
@@ -97,12 +98,12 @@ class ErrorView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.wifi_off_rounded,
-              size: 48, color: Colors.white.withValues(alpha: 0.3)),
+              size: 48, color: VaxpColors.defaultText.withValues(alpha: 0.3)),
           const SizedBox(height: 12),
           Text('Connection Error',
               style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white.withValues(alpha: 0.7),
+                  color: VaxpColors.defaultText.withValues(alpha: 0.7),
                   fontWeight: FontWeight.w600)),
           const SizedBox(height: 6),
           Padding(
@@ -111,16 +112,16 @@ class ErrorView extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 12,
-                    color: Colors.white.withValues(alpha: 0.35))),
+                    color: VaxpColors.defaultText.withValues(alpha: 0.35))),
           ),
           const SizedBox(height: 20),
           ElevatedButton.icon(
             onPressed: onRetry,
-            icon: const Icon(Icons.refresh, size: 16),
-            label: const Text('Retry'),
+            icon: Icon(Icons.refresh, size: 16),
+            label: Text('Retry'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white.withValues(alpha: 0.1),
-              foregroundColor: Colors.white,
+              backgroundColor: VaxpColors.defaultText.withValues(alpha: 0.1),
+              foregroundColor: VaxpColors.defaultText,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
             ),
@@ -142,11 +143,11 @@ class EmptyView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.inbox_outlined,
-              size: 48, color: Colors.white.withValues(alpha: 0.2)),
+              size: 48, color: VaxpColors.defaultText.withValues(alpha: 0.2)),
           const SizedBox(height: 12),
           Text('No content available',
               style: TextStyle(
-                  fontSize: 15, color: Colors.white.withValues(alpha: 0.4))),
+                  fontSize: 15, color: VaxpColors.defaultText.withValues(alpha: 0.4))),
         ],
       ),
     );
@@ -162,10 +163,10 @@ class SectionLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: 13,
         fontWeight: FontWeight.w700,
-        color: Colors.white,
+        color: VaxpColors.defaultText,
         letterSpacing: 0.3,
       ),
     );
@@ -207,11 +208,11 @@ class LargeIcon extends StatelessWidget {
         width: size,
         height: size,
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.08),
+          color: VaxpColors.defaultText.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(size * 0.22),
         ),
         child: Icon(Icons.apps_rounded,
-            size: size * 0.5, color: Colors.white.withValues(alpha: 0.3)),
+            size: size * 0.5, color: VaxpColors.defaultText.withValues(alpha: 0.3)),
       );
     }
     return ClipRRect(
@@ -224,17 +225,17 @@ class LargeIcon extends StatelessWidget {
         placeholder: (_, __) => Container(
           width: size,
           height: size,
-          color: Colors.white.withValues(alpha: 0.08),
-          child: const Center(
+          color: VaxpColors.defaultText.withValues(alpha: 0.08),
+          child: Center(
               child: CircularProgressIndicator(
-                  strokeWidth: 1.5, color: Colors.white38)),
+                  strokeWidth: 1.5, color: VaxpColors.defaultText.withValues(alpha: 0.38))),
         ),
         errorWidget: (_, __, ___) => Container(
           width: size,
           height: size,
-          color: Colors.white.withValues(alpha: 0.08),
+          color: VaxpColors.defaultText.withValues(alpha: 0.08),
           child: Icon(Icons.broken_image_outlined,
-              color: Colors.white.withValues(alpha: 0.3)),
+              color: VaxpColors.defaultText.withValues(alpha: 0.3)),
         ),
       ),
     );
@@ -263,17 +264,17 @@ class ScreenshotCarousel extends StatelessWidget {
             placeholder: (_, __) => Container(
               width: 280,
               height: 180,
-              color: Colors.white.withValues(alpha: 0.06),
-              child: const Center(
+              color: VaxpColors.defaultText.withValues(alpha: 0.06),
+              child: Center(
                   child: CircularProgressIndicator(
-                      strokeWidth: 1.5, color: Colors.white38)),
+                      strokeWidth: 1.5, color: VaxpColors.defaultText.withValues(alpha: 0.38))),
             ),
             errorWidget: (_, __, ___) => Container(
               width: 280,
               height: 180,
-              color: Colors.white.withValues(alpha: 0.06),
+              color: VaxpColors.defaultText.withValues(alpha: 0.06),
               child: Icon(Icons.image_not_supported_outlined,
-                  color: Colors.white.withValues(alpha: 0.2), size: 36),
+                  color: VaxpColors.defaultText.withValues(alpha: 0.2), size: 36),
             ),
           ),
         ),
@@ -297,16 +298,16 @@ class ChangelogCard extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.05),
+            color: VaxpColors.defaultText.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+            border: Border.all(color: VaxpColors.defaultText.withValues(alpha: 0.08)),
           ),
           child: Text(
             changelog,
             style: TextStyle(
               fontSize: 12,
               height: 1.8,
-              color: Colors.white.withValues(alpha: 0.65),
+              color: VaxpColors.defaultText.withValues(alpha: 0.65),
             ),
           ),
         ),
@@ -326,9 +327,9 @@ class DetailTitlebar extends StatelessWidget {
       height: 42,
       padding: const EdgeInsets.symmetric(horizontal: 14),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.04),
+        color: VaxpColors.defaultText.withValues(alpha: 0.04),
         border: Border(
-          bottom: BorderSide(color: Colors.white.withValues(alpha: 0.07)),
+          bottom: BorderSide(color: VaxpColors.defaultText.withValues(alpha: 0.07)),
         ),
       ),
       child: Row(
@@ -341,7 +342,7 @@ class DetailTitlebar extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.07),
+                  color: VaxpColors.defaultText.withValues(alpha: 0.07),
                   borderRadius: BorderRadius.circular(7),
                 ),
                 child: Row(
@@ -349,12 +350,12 @@ class DetailTitlebar extends StatelessWidget {
                   children: [
                     Icon(Icons.arrow_back_ios_new_rounded,
                         size: 11,
-                        color: Colors.white.withValues(alpha: 0.7)),
+                        color: VaxpColors.defaultText.withValues(alpha: 0.7)),
                     const SizedBox(width: 4),
                     Text('Back',
                         style: TextStyle(
                             fontSize: 12,
-                            color: Colors.white.withValues(alpha: 0.7))),
+                            color: VaxpColors.defaultText.withValues(alpha: 0.7))),
                   ],
                 ),
               ),
@@ -363,10 +364,10 @@ class DetailTitlebar extends StatelessWidget {
           Expanded(
             child: Center(
               child: Text(title,
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
-                      color: Colors.white)),
+                      color: VaxpColors.defaultText)),
             ),
           ),
           const SizedBox(width: 72),
@@ -397,15 +398,15 @@ class DetailInstallButton extends StatelessWidget {
       return Container(
         height: 48,
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.05),
+          color: VaxpColors.defaultText.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(14),
         ),
-        child: const Center(
+        child: Center(
           child: SizedBox(
               width: 18,
               height: 18,
               child: CircularProgressIndicator(
-                  strokeWidth: 1.5, color: Colors.white38)),
+                  strokeWidth: 1.5, color: VaxpColors.defaultText.withValues(alpha: 0.38))),
         ),
       );
     }
@@ -417,7 +418,7 @@ class DetailInstallButton extends StatelessWidget {
           child: LinearProgressIndicator(
             value: state.progress,
             minHeight: 6,
-            backgroundColor: Colors.white.withValues(alpha: 0.08),
+            backgroundColor: VaxpColors.defaultText.withValues(alpha: 0.08),
             color: const Color(0xFF7AB3FF),
           ),
         ),
@@ -425,7 +426,7 @@ class DetailInstallButton extends StatelessWidget {
         Text(
           'Downloading... ${(state.progress * 100).toStringAsFixed(0)}%',
           style: TextStyle(
-              fontSize: 12, color: Colors.white.withValues(alpha: 0.5)),
+              fontSize: 12, color: VaxpColors.defaultText.withValues(alpha: 0.5)),
         ),
       ]);
     }
@@ -433,7 +434,7 @@ class DetailInstallButton extends StatelessWidget {
     if (state.status == InstallStatus.error) {
       return Column(children: [
         Text(state.errorMessage ?? 'An error occurred',
-            style: const TextStyle(fontSize: 12, color: Colors.redAccent),
+            style: TextStyle(fontSize: 12, color: Colors.redAccent),
             textAlign: TextAlign.center),
         const SizedBox(height: 8),
         BigButton(
@@ -507,14 +508,14 @@ class _BigButtonState extends State<BigButton> {
           width: double.infinity,
           decoration: BoxDecoration(
             color: disabled
-                ? Colors.white.withValues(alpha: 0.06)
+                ? VaxpColors.defaultText.withValues(alpha: 0.06)
                 : _hovered
                     ? widget.color.withValues(alpha: 0.25)
                     : widget.color.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(14),
             border: Border.all(
               color: disabled
-                  ? Colors.white.withValues(alpha: 0.1)
+                  ? VaxpColors.defaultText.withValues(alpha: 0.1)
                   : widget.color.withValues(alpha: 0.4),
             ),
           ),

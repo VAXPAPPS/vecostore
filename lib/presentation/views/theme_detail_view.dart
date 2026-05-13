@@ -7,6 +7,7 @@ import '../../data/repositories/install_repository.dart';
 import '../../domain/models/store_item.dart';
 import '../../domain/models/install_state.dart';
 import '../widgets/shared_widgets.dart';
+import 'package:vecostore/core/colors/vaxp_colors.dart';
 
 class ThemeDetailView extends StatelessWidget {
   final StoreItem item;
@@ -45,14 +46,14 @@ class _ThemeDetailBody extends StatelessWidget {
 
                   // ── Description ───────────────────────────
                   if (item.description.isNotEmpty) ...[
-                    const SectionLabel('Description'),
+                    SectionLabel('Description'),
                     const SizedBox(height: 8),
                     Text(
                       item.description,
                       style: TextStyle(
                         fontSize: 13,
                         height: 1.7,
-                        color: Colors.white.withValues(alpha: 0.75),
+                        color: VaxpColors.defaultText.withValues(alpha: 0.75),
                       ),
                     ),
                     const SizedBox(height: 24),
@@ -60,7 +61,7 @@ class _ThemeDetailBody extends StatelessWidget {
 
                   // ── Screenshots ───────────────────────────
                   if (item.screenshots.isNotEmpty) ...[
-                    const SectionLabel('Theme Preview'),
+                    SectionLabel('Theme Preview'),
                     const SizedBox(height: 12),
                     ScreenshotCarousel(urls: item.screenshots),
                     const SizedBox(height: 24),
@@ -75,7 +76,7 @@ class _ThemeDetailBody extends StatelessWidget {
 
                   // ── Changelog ─────────────────────────────
                   if (item.updateInfo?.changelog.isNotEmpty == true) ...[
-                    const SectionLabel('Changelog'),
+                    SectionLabel('Changelog'),
                     const SizedBox(height: 8),
                     ChangelogCard(changelog: item.updateInfo!.changelog),
                     const SizedBox(height: 24),
@@ -114,9 +115,9 @@ class _ThemeHeader extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.07),
+            color: VaxpColors.defaultText.withValues(alpha: 0.07),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+            border: Border.all(color: VaxpColors.defaultText.withValues(alpha: 0.1)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,19 +134,19 @@ class _ThemeHeader extends StatelessWidget {
                     fit: BoxFit.cover,
                     placeholder: (_, __) => Container(
                       height: 160,
-                      color: Colors.white.withValues(alpha: 0.05),
-                      child: const Center(
+                      color: VaxpColors.defaultText.withValues(alpha: 0.05),
+                      child: Center(
                         child: CircularProgressIndicator(
-                            strokeWidth: 1.5, color: Colors.white24),
+                            strokeWidth: 1.5, color: VaxpColors.defaultText.withValues(alpha: 0.24)),
                       ),
                     ),
                     errorWidget: (_, __, ___) => Container(
                       height: 160,
-                      color: Colors.white.withValues(alpha: 0.04),
+                      color: VaxpColors.defaultText.withValues(alpha: 0.04),
                       child: Center(
                         child: Icon(Icons.palette_outlined,
                             size: 48,
-                            color: Colors.white.withValues(alpha: 0.15)),
+                            color: VaxpColors.defaultText.withValues(alpha: 0.15)),
                       ),
                     ),
                   ),
@@ -159,17 +160,17 @@ class _ThemeHeader extends StatelessWidget {
                   children: [
                     Text(
                       item.displayName,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: VaxpColors.defaultText,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(item.author,
                         style: TextStyle(
                             fontSize: 12,
-                            color: Colors.white.withValues(alpha: 0.4))),
+                            color: VaxpColors.defaultText.withValues(alpha: 0.4))),
                     if (item.updateInfo != null) ...[
                       const SizedBox(height: 8),
                       PillChip(
@@ -202,9 +203,9 @@ class _BundleSection extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.05),
+            color: VaxpColors.defaultText.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.09)),
+            border: Border.all(color: VaxpColors.defaultText.withValues(alpha: 0.09)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -212,20 +213,20 @@ class _BundleSection extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.inventory_2_outlined,
-                      size: 14, color: Colors.white.withValues(alpha: 0.5)),
+                      size: 14, color: VaxpColors.defaultText.withValues(alpha: 0.5)),
                   const SizedBox(width: 6),
-                  const Text('Bundle Contents',
+                  Text('Bundle Contents',
                       style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white)),
+                          color: VaxpColors.defaultText)),
                 ],
               ),
               const SizedBox(height: 4),
               Text('Automatically installed with the theme',
                   style: TextStyle(
                       fontSize: 11,
-                      color: Colors.white.withValues(alpha: 0.35))),
+                      color: VaxpColors.defaultText.withValues(alpha: 0.35))),
 
               if (item.bundledPlugins.isNotEmpty) ...[
                 const SizedBox(height: 14),

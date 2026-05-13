@@ -6,6 +6,7 @@ import '/../presentation/pages/apps_page.dart';
 import '/../presentation/pages/themes_page.dart';
 import '/../presentation/pages/plugins_page.dart';
 import '/../presentation/pages/widgets_page.dart';
+import 'package:vecostore/core/colors/vaxp_colors.dart';
 
 // ─── Tab model ────────────────────────────────────────────
 class _StoreTab {
@@ -33,7 +34,7 @@ class _StoreShellState extends State<StoreShell> {
   int _selectedTab = 0;
   bool _titlebarHovered = false;
   Color _backgroundColor = const Color.fromARGB(100, 0, 0, 0);
-  Color _textColor = Colors.white;
+  Color _textColor = VaxpColors.defaultText;
 
   @override
   void initState() {
@@ -227,7 +228,7 @@ class _StoreTitlebar extends StatelessWidget {
               decoration: BoxDecoration(
                 color: const Color.fromARGB(210, 15, 15, 20).withValues(alpha: 0.7),
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                border: Border.all(color: VaxpColors.defaultText.withValues(alpha: 0.1)),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -236,32 +237,32 @@ class _StoreTitlebar extends StatelessWidget {
                     width: 64,
                     height: 64,
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.05),
+                      color: VaxpColors.defaultText.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                      border: Border.all(color: VaxpColors.defaultText.withValues(alpha: 0.1)),
                     ),
-                    child: Icon(Icons.storefront_rounded, size: 32, color: Colors.white.withValues(alpha: 0.8)),
+                    child: Icon(Icons.storefront_rounded, size: 32, color: VaxpColors.defaultText.withValues(alpha: 0.8)),
                   ),
                   const SizedBox(height: 16),
-                  const Text('VAXP Store', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                  Text('VAXP Store', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: VaxpColors.defaultText)),
                   const SizedBox(height: 4),
-                  Text('Version 0.1.0', style: TextStyle(fontSize: 12, color: Colors.white.withValues(alpha: 0.5))),
+                  Text('Version 0.1.0', style: TextStyle(fontSize: 12, color: VaxpColors.defaultText.withValues(alpha: 0.5))),
                   const SizedBox(height: 16),
                   Text('The official ecosystem store for VAXP organization. Download apps, themes, plugins, and widgets.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 13, height: 1.5, color: Colors.white.withValues(alpha: 0.7)),
+                    style: TextStyle(fontSize: 13, height: 1.5, color: VaxpColors.defaultText.withValues(alpha: 0.7)),
                   ),
                   const SizedBox(height: 24),
                   ElevatedButton(
                     onPressed: () => Navigator.pop(context),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white.withValues(alpha: 0.1),
-                      foregroundColor: Colors.white,
+                      backgroundColor: VaxpColors.defaultText.withValues(alpha: 0.1),
+                      foregroundColor: VaxpColors.defaultText,
                       elevation: 0,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       minimumSize: const Size(double.infinity, 36),
                     ),
-                    child: const Text('Close'),
+                    child: Text('Close'),
                   ),
                 ],
               ),
@@ -290,7 +291,7 @@ class _TabStrip extends StatelessWidget {
     return Container(
       height: 30,
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.06),
+        color: VaxpColors.defaultText.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(10),
       ),
       padding: const EdgeInsets.all(3),
@@ -342,9 +343,9 @@ class _TabPillState extends State<_TabPill> {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
           decoration: BoxDecoration(
             color: active
-                ? Colors.white.withValues(alpha: 0.18)
+                ? VaxpColors.defaultText.withValues(alpha: 0.18)
                 : _hovered
-                    ? Colors.white.withValues(alpha: 0.08)
+                    ? VaxpColors.defaultText.withValues(alpha: 0.08)
                     : Colors.transparent,
             borderRadius: BorderRadius.circular(7),
           ),

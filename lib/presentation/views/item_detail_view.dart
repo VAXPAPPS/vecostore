@@ -6,6 +6,7 @@ import '../../data/repositories/install_repository.dart';
 import '../../domain/models/store_item.dart';
 import '../../domain/models/install_state.dart';
 import '../widgets/shared_widgets.dart';
+import 'package:vecostore/core/colors/vaxp_colors.dart';
 
 class ItemDetailView extends StatelessWidget {
   final StoreItem item;
@@ -44,14 +45,14 @@ class _DetailBody extends StatelessWidget {
 
                   // ── Description ───────────────────────────
                   if (item.description.isNotEmpty) ...[
-                    const SectionLabel('Description'),
+                    SectionLabel('Description'),
                     const SizedBox(height: 8),
                     Text(
                       item.description,
                       style: TextStyle(
                         fontSize: 13,
                         height: 1.7,
-                        color: Colors.white.withValues(alpha: 0.75),
+                        color: VaxpColors.defaultText.withValues(alpha: 0.75),
                       ),
                     ),
                     const SizedBox(height: 24),
@@ -59,7 +60,7 @@ class _DetailBody extends StatelessWidget {
 
                   // ── Screenshots ───────────────────────────
                   if (item.screenshots.isNotEmpty) ...[
-                    const SectionLabel('Screenshots'),
+                    SectionLabel('Screenshots'),
                     const SizedBox(height: 12),
                     ScreenshotCarousel(urls: item.screenshots),
                     const SizedBox(height: 24),
@@ -67,7 +68,7 @@ class _DetailBody extends StatelessWidget {
 
                   // ── Changelog ─────────────────────────────
                   if (item.updateInfo?.changelog.isNotEmpty == true) ...[
-                    const SectionLabel('Changelog'),
+                    SectionLabel('Changelog'),
                     const SizedBox(height: 8),
                     ChangelogCard(changelog: item.updateInfo!.changelog),
                     const SizedBox(height: 24),
@@ -107,9 +108,9 @@ class _DetailHeader extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.07),
+            color: VaxpColors.defaultText.withValues(alpha: 0.07),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+            border: Border.all(color: VaxpColors.defaultText.withValues(alpha: 0.1)),
           ),
           child: Row(
             children: [
@@ -121,16 +122,16 @@ class _DetailHeader extends StatelessWidget {
                   children: [
                     Text(
                       item.displayName,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white),
+                          color: VaxpColors.defaultText),
                     ),
                     const SizedBox(height: 4),
                     Text(item.author,
                         style: TextStyle(
                             fontSize: 12,
-                            color: Colors.white.withValues(alpha: 0.5))),
+                            color: VaxpColors.defaultText.withValues(alpha: 0.5))),
                     if (item.updateInfo != null) ...[
                       const SizedBox(height: 6),
                       PillChip(
@@ -141,7 +142,7 @@ class _DetailHeader extends StatelessWidget {
                       const SizedBox(height: 4),
                       PillChip(
                           item.category!,
-                          Colors.white.withValues(alpha: 0.3)),
+                          VaxpColors.defaultText.withValues(alpha: 0.3)),
                     ],
                   ],
                 ),
