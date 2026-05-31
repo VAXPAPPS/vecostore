@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=vecostore
+Comment=Flutter Application - vecostore
+Exec=/usr/bin/vecostore
+Icon=/usr/share/icons/hicolor/256x256/apps/vecostore.png
+Terminal=false
+Categories=Utility;Development;
+Keywords=store;software;install;packages;apps;
+MimeType=application/vnd.debian.binary-package;
